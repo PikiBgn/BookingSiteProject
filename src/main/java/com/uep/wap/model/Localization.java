@@ -26,6 +26,6 @@ public class Localization {
     private float latitude;
     private float longitude;
     @OneToOne(mappedBy = "localisation", cascade = CascadeType.ALL)
-    private AccomodationObject accomodationObject;
+    private AccommodationObject accommodationObject;
 
 }

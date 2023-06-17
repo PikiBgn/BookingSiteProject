@@ -1,6 +1,5 @@
 package com.uep.wap.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +22,7 @@ public class Room {
     private String name;
     private int numberOfPeople;
     @ManyToOne
-    @JoinColumn(name = "accomodation_object_id")
-    private AccomodationObject accomodationObject;
+    @JoinColumn(name = "accommodation_object_id")
+    private AccommodationObject accommodationObject;
 
 }

@@ -15,11 +15,11 @@ import lombok.Setter;
 @Setter
 @Entity
 @NoArgsConstructor
-public class AccomodationObjectType {
+public class AccommodationObjectType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     private String type;
-    @OneToMany(mappedBy = "accomodationObjectType", cascade = CascadeType.ALL)
-    private List<AccomodationObject> accomodationObjects;
+    @OneToMany(mappedBy = "accommodationObjectType", cascade = CascadeType.ALL)
+    private List<AccommodationObject> accommodationObjects;
 }

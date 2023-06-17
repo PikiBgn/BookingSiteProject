@@ -2,7 +2,6 @@ package com.uep.wap.model;
 
 import java.util.List;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,14 +19,14 @@ import lombok.Setter;
 @Setter
 @Entity
 @NoArgsConstructor
-public class AccomodationObject {
+public class AccommodationObject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     String name;
     @ManyToOne
-    @JoinColumn(name = "accomodation_object_type_id")
-    AccomodationObjectType accomodationObjectType;
+    @JoinColumn(name = "accommodation_object_type_id")
+    AccommodationObjectType accommodationObjectType;
     @ManyToOne
     @JoinColumn(name = "user_id")
     User owner;
@@ -37,6 +36,6 @@ public class AccomodationObject {
     String description;
     String header;
     int stars;
-    @OneToMany(mappedBy = "accomodationObject", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "accommodationObject", cascade = CascadeType.ALL)
     private List<Room> room;
 }
