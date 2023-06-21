@@ -13,8 +13,6 @@ import javax.persistence.OneToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-
 @Getter
 @Setter
 @Entity
@@ -30,7 +28,7 @@ public class AccommodationObject {
     @ManyToOne
     @JoinColumn(name = "user_id")
     User owner;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "localisation_id")
     Localization localisation;
     String description;
