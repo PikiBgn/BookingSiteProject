@@ -28,11 +28,11 @@ export class RegisterPanelComponent implements OnInit {
     const password = this.registrationForm.value.password;
     const email = this.registrationForm.value.email;
 
-    // this.authService.createNewUser(login, password, email).subscribe(
-        // (result) => {
-        //   this.info = result.responseMessage
-        // }
-    // )
+    this.authService.createNewUser(login, password, email).subscribe(
+        (result) => {
+          this.info = result.responseMessage
+        }
+    )
   }
 
 }

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4401")
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
@@ -23,7 +23,7 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    @PostMapping
+    @PostMapping("register")
     public User createUser(@RequestBody User user) {
         return userService.saveUser(user);
     }

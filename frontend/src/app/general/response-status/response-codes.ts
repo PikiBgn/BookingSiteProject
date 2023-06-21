@@ -1,0 +1,4 @@
+export enum ResponseStatus {
+    STATUS_USER_CREATED = "USER_CREATED",
+    STATUS_ACCOUNT_LOCKED = "ACCOUNT_LOCKED"
+}

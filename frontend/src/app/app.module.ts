@@ -10,6 +10,8 @@ import { AuthComponent } from './auth/auth.component';
 import { RegisterPanelComponent } from './register-panel/register-panel.component';
 import { HomeComponent } from './home/home.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { CreateOfferComponent } from './create-offer/create-offer.component';
+import {AuthService} from "./general/auth/auth.service";
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import {ReactiveFormsModule} from "@angular/forms";
     BookComponent,
     AuthComponent,
     RegisterPanelComponent,
-    HomeComponent
+    HomeComponent,
+    CreateOfferComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
