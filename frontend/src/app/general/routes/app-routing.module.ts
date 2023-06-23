@@ -6,6 +6,7 @@ import {BookComponent} from "../../book/book.component";
 import {AuthComponent} from "../../auth/auth.component";
 import {RegisterPanelComponent} from "../../register-panel/register-panel.component";
 import {HomeComponent} from "../../home/home.component";
+import {TestComponent} from "../../component/test/test.component";
 
 const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -13,8 +14,8 @@ const routes: Routes = [
     {path: 'about', component: AboutComponent},
     {path: 'book', component: BookComponent},
     {path: 'auth', component: AuthComponent},
-    {path: 'register', component: RegisterPanelComponent}
-
+    {path: 'register', component: RegisterPanelComponent},
+    {path: 'test', component: TestComponent}
 ];
 
 @NgModule({

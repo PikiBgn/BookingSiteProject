@@ -1,0 +1,33 @@
+<div class="card my-5">
+  <div class="card-body">
+    <p>Total number of accommodation objects: {{ accommodationObjects.length }}</p>
+    <p>Total number of accommodation objects: {{ accommodationObjects[4] }}</p>
+    <p>accommodation object by id: {{ accommodationObjectTest.name }}</p>
+    <p>Total number of accommodation objects: {{ accommodationObjects.length }}</p>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let accommodationObject of accommodationObjects">
+        <td>{{ accommodationObject.id }}</td>
+        <td>{{ accommodationObject.name }}</td>
+        <td>
+          <button (click)="deleteAccommodationObject(accommodationObject.id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+<form (ngSubmit)="saveAccommodationObject()" #userForm="ngForm">
+  <button type="submit" [disabled]="!userForm.form.valid"
+          class="btn btn-info">Submit</button>
+</form>
+
+
+

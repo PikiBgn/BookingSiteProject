@@ -9,7 +9,10 @@ import { BookComponent } from './book/book.component';
 import { AuthComponent } from './auth/auth.component';
 import { RegisterPanelComponent } from './register-panel/register-panel.component';
 import { HomeComponent } from './home/home.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {AccommodationObjectService} from "./service/accommodation-object/accommodation-object.service";
+import {HttpClientModule} from "@angular/common/http";
+import {TestComponent} from "./component/test/test.component";
 
 @NgModule({
   declarations: [
@@ -19,14 +22,17 @@ import {ReactiveFormsModule} from "@angular/forms";
     BookComponent,
     AuthComponent,
     RegisterPanelComponent,
-    HomeComponent
+    HomeComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [AccommodationObjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
