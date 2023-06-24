@@ -5,11 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
 import { AboutComponent } from './component/about/about.component';
 import {AppRoutingModule} from "./general/routes/app-routing.module";
-import { BookComponent } from './book/book.component';
-import { AuthComponent } from './auth/auth.component';
-import { RegisterPanelComponent } from './register-panel/register-panel.component';
-import { HomeComponent } from './home/home.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CreateOfferComponent } from './create-offer/create-offer.component';
 import {AuthService} from "./general/auth/auth.service";
 import {AccommodationObjectService} from "./service/accommodation-object/accommodation-object.service";
@@ -20,6 +16,11 @@ import {LocalizationService} from "./service/localization/localization.service";
 import {ReservationService} from "./service/reservation/reservation.service";
 import {RoomService} from "./service/room/room.service";
 import {UserService} from "./service/user/user.service";
+import {ResponseStatusHandler} from "./general/response-status/response-status.service";
+import {BookComponent} from "./component/book/book.component";
+import {AuthComponent} from "./component/auth/auth.component";
+import {RegisterPanelComponent} from "./component/register-panel/register-panel.component";
+import {HomeComponent} from "./component/home/home.component";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import {UserService} from "./service/user/user.service";
     AboutComponent,
     BookComponent,
     AuthComponent,
-    RegisterPanelComponent,
+      RegisterPanelComponent,
     HomeComponent,
     CreateOfferComponent,
     TestComponent
@@ -40,7 +41,7 @@ import {UserService} from "./service/user/user.service";
     HttpClientModule,
     FormsModule,
   ],
-  providers: [AuthService,AccommodationObjectService, AccommodationObjectTypeService, LocalizationService, ReservationService, RoomService, UserService],
+  providers: [AuthService,ResponseStatusHandler,AccommodationObjectService, AccommodationObjectTypeService, LocalizationService, ReservationService, RoomService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

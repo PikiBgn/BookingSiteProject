@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
-import {HeaderComponent} from "../../header/header.component";
-import {AboutComponent} from "../../about/about.component";
-import {BookComponent} from "../../book/book.component";
-import {AuthComponent} from "../../auth/auth.component";
-import {RegisterPanelComponent} from "../../register-panel/register-panel.component";
-import {HomeComponent} from "../../home/home.component";
+import {HomeComponent} from "../../component/home/home.component";
+import {AboutComponent} from "../../component/about/about.component";
+import {BookComponent} from "../../component/book/book.component";
+import {AuthComponent} from "../../component/auth/auth.component";
+import {RegisterPanelComponent} from "../../component/register-panel/register-panel.component";
+
 
 const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
