@@ -5,11 +5,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
 import { AboutComponent } from './component/about/about.component';
 import {AppRoutingModule} from "./general/routes/app-routing.module";
-import { BookComponent } from './component/book/book.component';
-import { AuthComponent } from './component/auth/auth.component';
-import { RegisterPanelComponent } from './component/register-panel/register-panel.component';
-import { HomeComponent } from './component/home/home.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CreateOfferComponent } from './create-offer/create-offer.component';
+import {AuthService} from "./general/auth/auth.service";
 import {AccommodationObjectService} from "./service/accommodation-object/accommodation-object.service";
 import {HttpClientModule} from "@angular/common/http";
 import {TestComponent} from "./component/test/test.component";
@@ -18,6 +16,11 @@ import {LocalizationService} from "./service/localization/localization.service";
 import {ReservationService} from "./service/reservation/reservation.service";
 import {RoomService} from "./service/room/room.service";
 import {UserService} from "./service/user/user.service";
+import {ResponseStatusHandler} from "./general/response-status/response-status.service";
+import {BookComponent} from "./component/book/book.component";
+import {AuthComponent} from "./component/auth/auth.component";
+import {RegisterPanelComponent} from "./component/register-panel/register-panel.component";
+import {HomeComponent} from "./component/home/home.component";
 import { AccommodationObjectDetailsComponent } from './component/accommodation-object-details/accommodation-object-details.component';
 
 @NgModule({
@@ -27,10 +30,12 @@ import { AccommodationObjectDetailsComponent } from './component/accommodation-o
     AboutComponent,
     BookComponent,
     AuthComponent,
-    RegisterPanelComponent,
+      RegisterPanelComponent,
     HomeComponent,
     TestComponent,
-    AccommodationObjectDetailsComponent
+    AccommodationObjectDetailsComponent,
+    CreateOfferComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,7 @@ import { AccommodationObjectDetailsComponent } from './component/accommodation-o
     HttpClientModule,
     FormsModule,
   ],
-  providers: [AccommodationObjectService, AccommodationObjectTypeService, LocalizationService, ReservationService, RoomService, UserService],
+  providers: [AuthService,ResponseStatusHandler,AccommodationObjectService, AccommodationObjectTypeService, LocalizationService, ReservationService, RoomService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
