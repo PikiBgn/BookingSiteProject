@@ -7,6 +7,9 @@ import {AuthComponent} from "../../component/auth/auth.component";
 import {RegisterPanelComponent} from "../../component/register-panel/register-panel.component";
 import {HomeComponent} from "../../component/home/home.component";
 import {TestComponent} from "../../component/test/test.component";
+import {
+  AccommodationObjectDetailsComponent
+} from "../../component/accommodation-object-details/accommodation-object-details.component";
 
 const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -15,7 +18,8 @@ const routes: Routes = [
     {path: 'book', component: BookComponent},
     {path: 'auth', component: AuthComponent},
     {path: 'register', component: RegisterPanelComponent},
-    {path: 'test', component: TestComponent}
+    {path: 'test', component: TestComponent},
+  { path: 'accommodation-object-details/:id', component: AccommodationObjectDetailsComponent }
 ];
 
 @NgModule({

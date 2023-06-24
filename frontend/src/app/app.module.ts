@@ -18,6 +18,7 @@ import {LocalizationService} from "./service/localization/localization.service";
 import {ReservationService} from "./service/reservation/reservation.service";
 import {RoomService} from "./service/room/room.service";
 import {UserService} from "./service/user/user.service";
+import { AccommodationObjectDetailsComponent } from './component/accommodation-object-details/accommodation-object-details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {UserService} from "./service/user/user.service";
     AuthComponent,
     RegisterPanelComponent,
     HomeComponent,
-    TestComponent
+    TestComponent,
+    AccommodationObjectDetailsComponent
   ],
   imports: [
     BrowserModule,

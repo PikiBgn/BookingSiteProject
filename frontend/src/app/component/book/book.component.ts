@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AccommodationObject} from "../../model/accommodation-object";
+import {AccommodationObjectService} from "../../service/accommodation-object/accommodation-object.service";
 
 @Component({
   selector: 'app-book',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book.component.css']
 })
 export class BookComponent implements OnInit {
-
-  constructor() { }
+  accommodationObjects: AccommodationObject[] = [];
+  constructor(private accommodationObjectService: AccommodationObjectService) { }
 
   ngOnInit(): void {
+    this.accommodationObjectService.findAll().subscribe(data => {
+      this.accommodationObjects = data; })
   }
 
 }

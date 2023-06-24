@@ -1,1 +1,21 @@
-<p>book works!</p>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let accommodationObject of accommodationObjects">
+        <div class="card mb-4 shadow-sm">
+          <img [src]="" class="bd-placeholder-img card-img-top" alt="Accommodation Photo">
+          <div class="card-body">
+            <p class="card-text">{{ accommodationObject.name }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/accommodation-object-details', accommodationObject.id]">View Details</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Book Now</button>
+              </div>
+              <small class="text-muted">{{ accommodationObject.name }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

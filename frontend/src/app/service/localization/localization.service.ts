@@ -17,7 +17,7 @@ export class LocalizationService {
     return this.http.get<Localization[]>(this.apiUrl);
   }
 
-  public findById(id: number): Observable<Localization> {
+  public findById(id: Localization): Observable<Localization> {
     return this.http.get<Localization>(`${this.apiUrl}/${id}`);
   }
 
