@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,8 @@ public class AccommodationObjectType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     private String type;
+
     @OneToMany(mappedBy = "accommodationObjectType", cascade = CascadeType.ALL)
+    @JsonIdentityReference(alwaysAsId = true)
     private List<AccommodationObject> accommodationObjects;
 }

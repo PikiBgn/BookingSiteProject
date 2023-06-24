@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup} from "@angular/forms";
-import {AuthService} from "../general/auth/auth.service";
+import {AuthService} from "../../general/auth/auth.service";
 
 @Component({
   selector: 'app-register-panel',

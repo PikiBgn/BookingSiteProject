@@ -2,6 +2,7 @@ package com.uep.wap.model;
 
 import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,9 @@ public class Room {
     private String name;
     @ManyToOne
     @JoinColumn(name = "accommodation_object_id")
+    @JsonIdentityReference(alwaysAsId = true)
     private AccommodationObject accommodationObject;
     @OneToMany(mappedBy = "roomId", cascade = CascadeType.ALL)
+    @JsonIdentityReference(alwaysAsId = true)
     private List<Reservation> reservations;
 }

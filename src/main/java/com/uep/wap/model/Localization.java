@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,7 @@ public class Localization {
     private float latitude;
     private float longitude;
     @OneToOne(mappedBy = "localisation", cascade = CascadeType.ALL)
+    @JsonIdentityReference(alwaysAsId = true)
     private AccommodationObject accommodationObject;
 
 }
