@@ -1,10 +1,14 @@
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
-import {RequestResponse, ResponseStatusHandler} from "../response-status/response-status.service";
+import {RequestResponse} from "../response-status/response-status.service";
 import {BehaviorSubject} from "rxjs";
 import {User} from "./user-model";
 
+export interface AuthResponseData {
+    email: string,
+    password: string
+}
 @Injectable()
 export class AuthService{
 
@@ -12,7 +16,6 @@ export class AuthService{
     constructor(
         private router: Router,
         private httpClient: HttpClient,
-        private responseStatusHandler: ResponseStatusHandler
     ) {
     }
     createNewUser(firstName: string,lastName: string, password: string, email: string,birthdate: Date) {
@@ -23,6 +26,12 @@ export class AuthService{
             password: password,
             email: email,
             birthdate: birthdate
+        })
+    }
+    authorize(email: string, password: string) {
+        return this.httpClient.post<AuthResponseData>("http://localhost:8765/user/auth", {
+            login: email,
+            password: password
         })
     }
 }

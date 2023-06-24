@@ -18,9 +18,9 @@ import {RoomService} from "./service/room/room.service";
 import {UserService} from "./service/user/user.service";
 import {ResponseStatusHandler} from "./general/response-status/response-status.service";
 import {BookComponent} from "./component/book/book.component";
-import {AuthComponent} from "./component/auth/auth.component";
 import {RegisterPanelComponent} from "./component/register-panel/register-panel.component";
 import {HomeComponent} from "./component/home/home.component";
+import { LoginPanelComponent } from './component/login-panel/login-panel.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +28,11 @@ import {HomeComponent} from "./component/home/home.component";
     HeaderComponent,
     AboutComponent,
     BookComponent,
-    AuthComponent,
       RegisterPanelComponent,
     HomeComponent,
     CreateOfferComponent,
-    TestComponent
+    TestComponent,
+    LoginPanelComponent
   ],
   imports: [
     BrowserModule,

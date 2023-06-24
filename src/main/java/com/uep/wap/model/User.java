@@ -41,4 +41,9 @@ public class User {
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     @JsonIdentityReference(alwaysAsId = true)
     private List<AccommodationObject> accommodationObjects;
+
+    public void increaseFailAttempts()
+    {
+        failedAttempts++;
+    }
 }
