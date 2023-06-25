@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card-deck justify-content-start">
+        <div class="card" *ngFor="let room of accommodationObject.room" style="margin: 0;">
+          <div class="card-body">
+            <h5 class="card-title">{{ room.name }}</h5>
+            <p class="card-text">Price: {{ room.price }}</p>
+            <p class="card-text">Number of People: {{ room.numberOfPeople }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
