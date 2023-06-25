@@ -30,6 +30,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatInputModule} from "@angular/material/input";
 import { RoomElementCalendarComponent } from './component/room-element-calendar/room-element-calendar.component';
+import {JsonPipe, NgIf} from "@angular/common";
 
 
 @NgModule({
@@ -56,7 +57,9 @@ import { RoomElementCalendarComponent } from './component/room-element-calendar/
     FormsModule,
     MatDatepickerModule,
     BrowserAnimationsModule,
-    MatSelectModule,MatFormFieldModule, MatDatepickerModule, MatNativeDateModule,MatInputModule
+    MatSelectModule,MatFormFieldModule, MatDatepickerModule, MatNativeDateModule,MatInputModule,
+    NgIf,
+    JsonPipe
   ],
   providers: [AuthService,ResponseStatusHandler,AccommodationObjectService, AccommodationObjectTypeService, LocalizationService, ReservationService, RoomService, UserService],
   bootstrap: [AppComponent]

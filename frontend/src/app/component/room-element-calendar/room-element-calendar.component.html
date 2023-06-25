@@ -6,13 +6,14 @@
 
     <mat-form-field>
       <mat-label>Enter a date range</mat-label>
-      <mat-date-range-input [rangePicker]="picker" [dateFilter]="bookingFilter">
-        <input matStartDate placeholder="Start date">
-        <input matEndDate placeholder="End date">
+      <mat-date-range-input [rangePicker]="picker" [formGroup]="range" [dateFilter]="bookingFilter">
+        <input matStartDate formControlName="start" placeholder="Start date">
+        <input matEndDate formControlName="end" placeholder="End date">
       </mat-date-range-input>
       <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-date-range-picker #picker></mat-date-range-picker>
     </mat-form-field>
+    <button class="btn btn-primary float-right" (click)="saveReservation()">Save Reservation</button>
   </div>
 </div>
