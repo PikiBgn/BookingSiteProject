@@ -22,6 +22,7 @@ import {AuthComponent} from "./component/auth/auth.component";
 import {RegisterPanelComponent} from "./component/register-panel/register-panel.component";
 import {HomeComponent} from "./component/home/home.component";
 import { AccommodationObjectDetailsComponent } from './component/accommodation-object-details/accommodation-object-details.component';
+import { BookNowComponent } from './component/book-now/book-now.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AccommodationObjectDetailsComponent } from './component/accommodation-o
     TestComponent,
     AccommodationObjectDetailsComponent,
     CreateOfferComponent,
-    TestComponent
+    TestComponent,
+    BookNowComponent
   ],
   imports: [
     BrowserModule,

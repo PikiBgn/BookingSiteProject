@@ -9,7 +9,7 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/accommodation-object-details', accommodationObject.id]">View Details</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Book Now</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/book-now', accommodationObject.id]">Book Now</button>
               </div>
               <small class="text-muted">{{ accommodationObject.name }}</small>
             </div>

@@ -9,6 +9,7 @@ import {TestComponent} from "../../component/test/test.component";
 import {
   AccommodationObjectDetailsComponent
 } from "../../component/accommodation-object-details/accommodation-object-details.component";
+import {BookNowComponent} from "../../component/book-now/book-now.component";
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
     {path: 'register', component: RegisterPanelComponent},
     {path: 'test', component: TestComponent},
   { path: 'accommodation-object-details/:id', component: AccommodationObjectDetailsComponent },
-    {path: 'register', component: RegisterPanelComponent}
+    {path: 'register', component: RegisterPanelComponent},
+  { path: 'book-now/:id', component: BookNowComponent }
 
 ];
 
