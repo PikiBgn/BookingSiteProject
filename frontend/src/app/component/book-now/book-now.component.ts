@@ -4,6 +4,11 @@ import {RoomService} from "../../service/room/room.service";
 import {AccommodationObjectService} from "../../service/accommodation-object/accommodation-object.service";
 import {ReservationService} from "../../service/reservation/reservation.service";
 import {ActivatedRoute} from "@angular/router";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatInputModule} from "@angular/material/input";
+import {Room} from "../../model/room";
 
 @Component({
   selector: 'app-book-now',
@@ -12,6 +17,8 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class BookNowComponent implements OnInit {
   accommodationObject: AccommodationObject;
+  currentRoomForFilter: Room;
+
   constructor(private route: ActivatedRoute,
               private accommodationObjectService: AccommodationObjectService,
               private reservationService: ReservationService,
@@ -23,16 +30,17 @@ export class BookNowComponent implements OnInit {
     this.accommodationObjectService.findById(id).subscribe(data => {
       this.accommodationObject = data;
 
-      this.roomService.findAll().subscribe(rooms => {
-        this.accommodationObject.room = rooms;
 
-        for (const room of this.accommodationObject.room) {
-          this.reservationService.findById(room.id).subscribe(reservation => {
-            room.reservations.push(reservation);
+        for (let i = 0; i < this.accommodationObject.room.length; i++) {
+          this.roomService.findById(this.accommodationObject.room[i]).subscribe(room => {
+            this.accommodationObject.room[room.id] = room;
+            console.log(room);
           });
         }
       });
-    });
+  }
+  bookingFilter(date: Date): boolean {
+    return date.getDate() > 20;
   }
 
 }

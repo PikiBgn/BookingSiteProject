@@ -23,6 +23,13 @@ import {RegisterPanelComponent} from "./component/register-panel/register-panel.
 import {HomeComponent} from "./component/home/home.component";
 import { AccommodationObjectDetailsComponent } from './component/accommodation-object-details/accommodation-object-details.component';
 import { BookNowComponent } from './component/book-now/book-now.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from "@angular/material/select";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatInputModule} from "@angular/material/input";
+
 
 @NgModule({
   declarations: [
@@ -45,6 +52,9 @@ import { BookNowComponent } from './component/book-now/book-now.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MatDatepickerModule,
+    BrowserAnimationsModule,
+    MatSelectModule,MatFormFieldModule, MatDatepickerModule, MatNativeDateModule,MatInputModule
   ],
   providers: [AuthService,ResponseStatusHandler,AccommodationObjectService, AccommodationObjectTypeService, LocalizationService, ReservationService, RoomService, UserService],
   bootstrap: [AppComponent]
