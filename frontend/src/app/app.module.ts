@@ -29,6 +29,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatInputModule} from "@angular/material/input";
+import { RoomElementCalendarComponent } from './component/room-element-calendar/room-element-calendar.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {MatInputModule} from "@angular/material/input";
     AccommodationObjectDetailsComponent,
     CreateOfferComponent,
     TestComponent,
-    BookNowComponent
+    BookNowComponent,
+    RoomElementCalendarComponent
   ],
   imports: [
     BrowserModule,

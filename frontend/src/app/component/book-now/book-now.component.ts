@@ -33,11 +33,12 @@ export class BookNowComponent implements OnInit {
 
         for (let i = 0; i < this.accommodationObject.room.length; i++) {
           this.roomService.findById(this.accommodationObject.room[i]).subscribe(room => {
-            this.accommodationObject.room[room.id] = room;
-            console.log(room);
+            this.accommodationObject.room[i] = room;
+            console.log(this.accommodationObject.room[i]);
           });
         }
-      });
+
+    });
   }
   bookingFilter(date: Date): boolean {
     return date.getDate() > 20;
