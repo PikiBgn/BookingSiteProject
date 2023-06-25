@@ -21,6 +21,17 @@ import {BookComponent} from "./component/book/book.component";
 import {RegisterPanelComponent} from "./component/register-panel/register-panel.component";
 import {HomeComponent} from "./component/home/home.component";
 import { LoginPanelComponent } from './component/login-panel/login-panel.component';
+import { AccommodationObjectDetailsComponent } from './component/accommodation-object-details/accommodation-object-details.component';
+import { BookNowComponent } from './component/book-now/book-now.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from "@angular/material/select";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatInputModule} from "@angular/material/input";
+import { RoomElementCalendarComponent } from './component/room-element-calendar/room-element-calendar.component';
+import {JsonPipe, NgIf} from "@angular/common";
+
 
 @NgModule({
   declarations: [
@@ -28,11 +39,14 @@ import { LoginPanelComponent } from './component/login-panel/login-panel.compone
     HeaderComponent,
     AboutComponent,
     BookComponent,
-      RegisterPanelComponent,
+    RegisterPanelComponent,
     HomeComponent,
-    CreateOfferComponent,
     TestComponent,
-    LoginPanelComponent
+    AccommodationObjectDetailsComponent,
+    CreateOfferComponent,
+    LoginPanelComponent,
+    BookNowComponent,
+    RoomElementCalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +54,11 @@ import { LoginPanelComponent } from './component/login-panel/login-panel.compone
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MatDatepickerModule,
+    BrowserAnimationsModule,
+    MatSelectModule,MatFormFieldModule, MatDatepickerModule, MatNativeDateModule,MatInputModule,
+    NgIf,
+    JsonPipe
   ],
   providers: [AuthService,ResponseStatusHandler,AccommodationObjectService, AccommodationObjectTypeService, LocalizationService, ReservationService, RoomService, UserService],
   bootstrap: [AppComponent]

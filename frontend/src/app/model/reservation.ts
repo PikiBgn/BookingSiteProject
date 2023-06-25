@@ -5,6 +5,6 @@ export class Reservation {
   id: number;
   user: User;
   roomId: Room;
-  startDate: string; // Change to Date type if required
-  endDate: string; // Change to Date type if required
+  startDate: Date; // Change to Date type if required
+  endDate: Date; // Change to Date type if required
 }

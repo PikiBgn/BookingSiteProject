@@ -17,7 +17,7 @@ export class AccommodationObjectTypeService {
     return this.http.get<AccommodationObjectType[]>(this.apiUrl);
   }
 
-  public findById(id: number): Observable<AccommodationObjectType> {
+  public findById(id: AccommodationObjectType): Observable<AccommodationObjectType> {
     return this.http.get<AccommodationObjectType>(`${this.apiUrl}/${id}`);
   }
 

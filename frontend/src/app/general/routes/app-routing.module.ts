@@ -5,6 +5,11 @@ import {AboutComponent} from "../../component/about/about.component";
 import {BookComponent} from "../../component/book/book.component";
 import {RegisterPanelComponent} from "../../component/register-panel/register-panel.component";
 import {LoginPanelComponent} from "../../component/login-panel/login-panel.component";
+import {TestComponent} from "../../component/test/test.component";
+import {
+  AccommodationObjectDetailsComponent
+} from "../../component/accommodation-object-details/accommodation-object-details.component";
+import {BookNowComponent} from "../../component/book-now/book-now.component";
 
 
 const routes: Routes = [
@@ -13,7 +18,10 @@ const routes: Routes = [
     {path: 'about', component: AboutComponent},
     {path: 'book', component: BookComponent},
     {path: 'auth', component: LoginPanelComponent},
-    {path: 'register', component: RegisterPanelComponent}
+    {path: 'register', component: RegisterPanelComponent},
+    {path: 'test', component: TestComponent},
+  { path: 'accommodation-object-details/:id', component: AccommodationObjectDetailsComponent },
+  { path: 'book-now/:id', component: BookNowComponent }
 
 ];
 

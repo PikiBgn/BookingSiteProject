@@ -17,7 +17,7 @@ export class ReservationService {
     return this.http.get<Reservation[]>(this.apiUrl);
   }
 
-  public findById(id: number): Observable<Reservation> {
+  public findById(id: Reservation): Observable<Reservation> {
     return this.http.get<Reservation>(`${this.apiUrl}/${id}`);
   }
 

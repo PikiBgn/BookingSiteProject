@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Room } from '../../model/room';
+import {AccommodationObject} from "../../model/accommodation-object";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class RoomService {
     return this.http.get<Room[]>(this.apiUrl);
   }
 
-  public findById(id: number): Observable<Room> {
+  public findById(id: Room): Observable<Room> {
     return this.http.get<Room>(`${this.apiUrl}/${id}`);
   }
 
