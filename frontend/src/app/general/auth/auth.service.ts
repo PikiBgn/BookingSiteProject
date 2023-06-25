@@ -30,7 +30,7 @@ export class AuthService{
     }
     authorize(email: string, password: string) {
         return this.httpClient.post<AuthResponseData>("http://localhost:8765/user/auth", {
-            login: email,
+            email: email,
             password: password
         })
     }

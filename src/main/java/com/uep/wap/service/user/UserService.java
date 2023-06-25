@@ -4,6 +4,7 @@ import com.uep.wap.model.User;
 import com.uep.wap.repository.user.UserRepository;
 import com.uep.wap.web_dto.LoginRequestDto;
 import com.uep.wap.web_dto.LoginResponseDto;
+import java.io.Console;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -22,7 +23,6 @@ public class UserService implements IUserService{
     private static final long LOCK_TIME_DURATION = 60 * 60 * 24 * 1000; // 24 hours
     @Autowired
     UserRepository userRepository;
-
     @Override
     public List<User> getAllUsers() {
         return userRepository.findAll();
@@ -45,7 +45,7 @@ public class UserService implements IUserService{
 
     public LoginResponseDto logIntoSystemAttempt(LoginRequestDto aLoginRequestDto )
     {
-        Optional< User > userToCheck = findByLogin( aLoginRequestDto.getEmail() );
+        Optional< User > userToCheck = findByEmail( aLoginRequestDto.getEmail() );
         if( userToCheck.isPresent() )
         {
             User foundUser = userToCheck.get();
@@ -77,7 +77,7 @@ public class UserService implements IUserService{
         }
     }
 
-    public Optional< User > findByLogin( String aEmail )
+    public Optional< User > findByEmail( String aEmail )
     {
         var foundUser = userRepository.findByEmail( aEmail );
         if( foundUser == null )
@@ -86,7 +86,7 @@ public class UserService implements IUserService{
         }
         else
         {
-            return Optional.of( foundUser );
+            return foundUser;
         }
     }
 
